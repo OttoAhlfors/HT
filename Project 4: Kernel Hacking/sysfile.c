@@ -66,7 +66,7 @@ sys_dup(void)
   return fd;
 }
 
-int readcount = 0;
+int readcount = 0; //I have added this
 
 int
 sys_read(void)
@@ -84,7 +84,7 @@ sys_read(void)
 int
 sys_getreadcount(void)
 {
-  return readcount;
+  return readcount; //I have added this
 }
 
 int
@@ -383,7 +383,7 @@ sys_chdir(void)
   char *path;
   struct inode *ip;
   struct proc *curproc = myproc();
-  
+
   begin_op();
   if(argstr(0, &path) < 0 || (ip = namei(path)) == 0){
     end_op();

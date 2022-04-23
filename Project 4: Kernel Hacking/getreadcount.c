@@ -8,6 +8,6 @@ int getcount(void) {
 
     int readcount = getcount();
     printf(1, "readcount: %d\n", readcount);
-    
+
     exit();
 }
