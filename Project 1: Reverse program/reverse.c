@@ -12,14 +12,14 @@ int main(int argc, char **argv ) {
     LIST *current, *head;
     char *inputFilename = argv[1];
     char *outputFilename = argv[2];
-    char line[500];
+    char line[1024];
 
     //Check that the ammount of arguments is correct (3)
-    if (argc > 3) {
+    if (argc < 3) {
         fprintf(stderr, "Too few arguments on function call\n");
         fprintf(stderr, "Usage: reverse <input> <output>\n");
         exit(1);
-    } if (argc < 3) {
+    } if (argc > 3) {
         fprintf(stderr, "Too many arguments on function call\n");
         fprintf(stderr, "Usage: reverse <input> <output>\n");
         exit(1);
@@ -68,8 +68,8 @@ int main(int argc, char **argv ) {
     file = fopen(outputFilename, "w+");
     if (file == NULL) {
         fprintf(stderr, "Error: cannot open file '%s'\n", outputFilename);
-    }
         exit(1);
+    }
 
     //Write to file
     struct list *temp = head;
